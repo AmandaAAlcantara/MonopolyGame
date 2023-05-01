@@ -1,9 +1,5 @@
 package com.cm6123.monopoly.app;
 
-import com.cm6123.monopoly.game.Player;
-import com.cm6123.monopoly.game.Board;
-import com.cm6123.monopoly.dice.Dice;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -44,22 +40,10 @@ public class UserInput {
         }
 
 
-        }
-
-    public void getPlayerSpaces() {
-        for (String playerName : players) {
-            Player playerInTurn = new Player(playerName);
-            playerInTurn.setPlayerPosition(playerName);
-            System.out.println("Player : " + playerName + " is now in space: " + playerInTurn.setPlayerPosition(playerName));
-        }
-        }
-
-
+    }
     public static void main(String[] args) {
         UserInput userInputPlayer = new UserInput();
         userInputPlayer.getNameFromUser();
-        userInputPlayer.getPlayerSpaces();
+
     }
 }
-
-

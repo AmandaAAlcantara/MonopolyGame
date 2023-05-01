@@ -19,7 +19,7 @@ public class BoardTest {
         // Test if the board is created and has 16 spaces
         assertEquals(10, board.spaces.size());
 
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 1; i <= 10; i++) {
             String spaceName = board.getCurrentSpace(i);
             //then
             assertNotNull(spaceName);
@@ -34,16 +34,16 @@ public class BoardTest {
 
             //when --- //then
             // Test that the getCurrentSpace() method returns the specific name (property, tax, station or road) related to the ID
-            assertEquals("Home", board.getCurrentSpace(0));
-            assertEquals("Road", board.getCurrentSpace(1));
-            assertEquals("Copacabana", board.getCurrentSpace(2));
-            assertEquals("Leblon", board.getCurrentSpace(3));
-            assertEquals("Road", board.getCurrentSpace(4));
-            assertEquals("Barra da Tijuca", board.getCurrentSpace(5));
-            assertEquals("Ipanema", board.getCurrentSpace(6));
-            assertEquals("Tax Office", board.getCurrentSpace(7));
-            assertEquals("Road", board.getCurrentSpace(8));
-            assertEquals("Train Station", board.getCurrentSpace(9));
+            assertEquals("Home", board.getCurrentSpace(1));
+            assertEquals("Road", board.getCurrentSpace(2));
+            assertEquals("Copacabana", board.getCurrentSpace(3));
+            assertEquals("Leblon", board.getCurrentSpace(4));
+            assertEquals("Road", board.getCurrentSpace(5));
+            assertEquals("Barra da Tijuca", board.getCurrentSpace(6));
+            assertEquals("Ipanema", board.getCurrentSpace(7));
+            assertEquals("Tax Office", board.getCurrentSpace(8));
+            assertEquals("Road", board.getCurrentSpace(9));
+            assertEquals("Train Station", board.getCurrentSpace(10));
         }
 
         @Test
@@ -53,7 +53,7 @@ public class BoardTest {
             Set<Integer> keys = board.spaces.keySet();
             Set<Integer> invalidKeys = new HashSet<>();
             //when
-            for (int i = 0; i <= 9; i++) {
+            for (int i = 1; i <= 10; i++) {
                 if (!keys.contains(i)) {
                     invalidKeys.add(i);
                 }

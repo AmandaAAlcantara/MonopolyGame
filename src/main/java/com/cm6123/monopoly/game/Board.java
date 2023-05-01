@@ -1,8 +1,8 @@
 package com.cm6123.monopoly.game;
 import java.util.HashMap;
 
-
 public class Board {
+
     /**
      * Creating a HashMap to store the names and spaces for the monopoly game.
      */
@@ -28,19 +28,16 @@ public class Board {
     /**
      * Adding the specific names and space numbers to the board.
      */
-
     public void theBoard(){
-        boardSpaces(0,"Home");
-        boardSpaces(1,"Road");
-        boardSpaces(2,"Copacabana");
-        boardSpaces(3,"Leblon");
-        boardSpaces(4,"Road");
-        boardSpaces(5,"Barra da Tijuca");
-        boardSpaces(6,"Ipanema");
-        boardSpaces(7,"Tax Office");
-        boardSpaces(8,"Road");
-        boardSpaces(9,"Train Station");
+        boardSpaces(1,"Home");
+        boardSpaces(2,"Road");
+        boardSpaces(3,"Copacabana");
+        boardSpaces(4,"Leblon");
+        boardSpaces(5,"Road");
+        boardSpaces(6,"Barra da Tijuca");
+        boardSpaces(7,"Ipanema");
+        boardSpaces(8,"Tax Office");
+        boardSpaces(9,"Road");
+        boardSpaces(10,"Train Station");
     }
-
 }
-
