@@ -40,4 +40,5 @@ import java.util.HashMap;
         public int getBalance(final Player player) {
             return balances.getOrDefault(player, 1000); // set starting balance to 1000
         }
+
     }
