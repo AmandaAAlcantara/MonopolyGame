@@ -28,7 +28,6 @@ public class ActionChecks {
         Bank bank = new Bank();
         Board board = new Board();
         Action action = new Action(bank, board);
-
         Player player = new Player("Bob");
         int initialBalance = bank.getBalance(player);
 

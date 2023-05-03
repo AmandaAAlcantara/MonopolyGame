@@ -1,10 +1,8 @@
 package com.cm6123.monopoly.app;
+import com.cm6123.monopoly.game.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.cm6123.monopoly.game.Board;
-import com.cm6123.monopoly.game.Bank;
-import com.cm6123.monopoly.game.Action;
-import com.cm6123.monopoly.game.Player;
+
 import java.util.Scanner;
 
 
@@ -34,6 +32,7 @@ public final class Application {
 
         Bank bank = new Bank();
         Board board = new Board();
+        Properties properties = new Properties();
         Action action = new Action(bank, board);
 
 // get number of players from user input
@@ -60,7 +59,7 @@ public final class Application {
             Player currentPlayer = players[currentPlayerIndex];
             int newPosition = action.move(currentPlayer);
             action.moveToSpace(currentPlayer, newPosition);
-            System.out.println(currentPlayer.getName() + " balance after moving to space " + newPosition + ": " + bank.getBalance(currentPlayer));
+            System.out.println(currentPlayer.getName() + " is now in square:" + board.getCurrentSpace(newPosition) + " balance: " + bank.getBalance(currentPlayer));
 
             // check if current player has won
             if (bank.getBalance(currentPlayer) <=0) {
