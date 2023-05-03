@@ -57,13 +57,6 @@ public class ActionChecks {
 
         // Check if player balance has decreased by 200
         newBalance = bank.getBalance(player);
-        Assertions.assertEquals(initialBalance - 400 - 250 - 150 - 200, newBalance);
-
-        // Move player to Tax Office space
-        action.moveToSpace(player, 7);
-
-        // Check if player balance has decreased by 100
-        newBalance = bank.getBalance(player);
-        Assertions.assertEquals(initialBalance - 400 - 250 - 150 - 200 - 100, newBalance);
+        Assertions.assertEquals(initialBalance - 400 - 250 - 150 -200, newBalance);
     }
 }

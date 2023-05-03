@@ -1,5 +1,4 @@
 package com.cm6123.monopoly;
-
 import com.cm6123.monopoly.game.Player;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

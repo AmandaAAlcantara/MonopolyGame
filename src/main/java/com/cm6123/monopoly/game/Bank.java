@@ -33,7 +33,6 @@ import java.util.HashMap;
         }
         /**
          * Creating a getBalance method so I can access the balance of each player.
-         * @param Player player **this is**
          * @param player **this is**
          * @return balances.getOrDefault(player, 1000)
          */

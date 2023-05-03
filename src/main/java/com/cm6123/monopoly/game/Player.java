@@ -14,7 +14,7 @@ public class Player {
      * defining the player as a parameter and the position as 0 (0 is the start of the board).
      * @param player ** this is **
      */
-    public Player(final String player) {
+    public Player(final String player){
         this.player = player;
         this.position = 0; // Initial position
     }
@@ -41,8 +41,8 @@ public class Player {
         this.position = spacesToMove;
     }
     /**
-     * Returning the name of the player if the method getName is called.
-     * @return player.getName()
+     * Returning the position of the player if the method getPosition is called.
+     * @return player
      */
     public String getName() {
         return player;

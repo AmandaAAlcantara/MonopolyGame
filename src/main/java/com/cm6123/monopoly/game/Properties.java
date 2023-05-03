@@ -5,7 +5,7 @@ public class Properties {
     /**
      * Defining the name of the spaces (number and name).
      */
-    Player player;
+    private Player player;
     /**
      * Defining the name of the spaces (number and name).
      */
