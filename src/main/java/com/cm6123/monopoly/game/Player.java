@@ -26,7 +26,6 @@ public class Player {
     public String getPlayer() {
         return player;
     }
-
     /**
      * Returning the position of the player if the method getPosition is called.
      * @return postion.getPosition()
@@ -34,7 +33,6 @@ public class Player {
     public int getPosition() {
         return position;
     }
-
     /**
      * Updating the position of the player by adding the number of spaces to move to the current position.
      * @param spacesToMove the number of spaces to move
@@ -42,6 +40,10 @@ public class Player {
     public void setPosition(final int spacesToMove) {
         this.position = spacesToMove;
     }
+    /**
+     * Returning the name of the player if the method getName is called.
+     * @return player.getName()
+     */
     public String getName() {
         return player;
     }

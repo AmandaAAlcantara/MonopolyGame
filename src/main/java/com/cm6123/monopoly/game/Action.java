@@ -2,9 +2,21 @@ package com.cm6123.monopoly.game;
 import com.cm6123.monopoly.dice.Dice;
 
 public class Action {
+    /**
+     * Creating a private String variable for storing the player name.
+     */
     private String playerName;
+    /**
+     * Creating a private integer variable for storing the value of the die first roll.
+     */
     private int firstRoll;
+    /**
+     * Creating a private integer variable for storing the value of the die second roll.
+     */
     private int secondRoll;
+    /**
+     * Creating a private integer variable for storing the value of the added values of the dices (the spaces the player needs to move).
+     */
     private int spacesToMove;
     /**
      * Creating a private instance variable for the properties object of the Properties class.
@@ -133,12 +145,13 @@ public class Action {
             case "Tax Office":
                 if (firstRoll == secondRoll){
                 int balance = bank.getBalance(player);
-                int amount1 = (int) (balance*0.1);
-                bank.withdraw(player, amount1);}
-                else {
+                int amount1 = (int) (balance*0.05);
+                bank.withdraw(player, amount1);
+                } else {
                 int balance = bank.getBalance(player);
-                int amount2 = (int) (balance*0.05);
-                bank.withdraw(player, amount2);}
+                int amount2 = (int) (balance*0.1);
+                bank.withdraw(player, amount2);
+                }
                 break;
             case "Train Station":
                 bank.withdraw(player, spacesToMove*10);

@@ -18,7 +18,7 @@ import java.util.HashMap;
          * @param player **this is**
          * @param amount **this is**
          */
-        public void deposit(Player player, final int amount) {
+        public void deposit(final Player player, final int amount) {
             int currentBalance = balances.getOrDefault(player, 1000); // set starting balance to 1000
             balances.put(player, currentBalance + amount);
         }

@@ -9,23 +9,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PlayerChecks {
     @ParameterizedTest
-    @CsvSource({"Lovelace, 2, 2", "Hamilton, -3, -3", "Turing, 5, 5"})
+    @CsvSource({"Lovelace, 2, 2", "Hamilton, -3, -3", "Turing, 5, 5","Jane, 7, 7"})
     void setPosition_updatesPosition(String playerName, int playerPosition, int expectedPosition) {
         Player player = new Player(playerName);
-
         player.setPosition(playerPosition);
-
         assertEquals(expectedPosition, player.getPosition());
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"James", "Gosling", "Rossum","Sagan"})
+    @ValueSource(strings = {"James", "Gosling", "Rossum", "Sagan"})
     void getPlayer_returnsPlayerName(String playerName) {
         Player player = new Player(playerName);
-
         String actualPlayerName = player.getPlayer();
-
         assertEquals(playerName, actualPlayerName);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"Bill, 0", "Carl, 0", "Bob, 0"})
+    void testPlayer(String name, int startingPosition) {
+        Player player = new Player(name);
+        assertEquals(name, player.getPlayer());
+        assertEquals(startingPosition, player.getPosition());
     }
 
 
