@@ -51,7 +51,7 @@ public class Action {
      * @param player **this is**
      * @return newPosition
      */
-    public int move(final Player player) {
+    public int move(final Player player){
         Dice dice = new Dice(6);
         firstRoll = dice.roll();
         secondRoll = dice.roll();
@@ -159,6 +159,5 @@ public class Action {
         }
     }
 }
-
 
 

@@ -46,7 +46,7 @@ public final class Application {
         while (numPlayers < 2 || numPlayers > 10) {
             System.out.print("Enter number of players (between 2 and 10): ");
             numPlayers = scanner.nextInt();
-            scanner.nextLine();  // consume the newline character
+            scanner.nextLine();
         }
 
 // create players
@@ -64,7 +64,8 @@ public final class Application {
             Player currentPlayer = players[currentPlayerIndex];
             int newPosition = action.move(currentPlayer);
             action.moveToSpace(currentPlayer, newPosition);
-            System.out.println(currentPlayer.getName() + " is now in square:" + board.getCurrentSpace(newPosition) + " balance: " + bank.getBalance(currentPlayer));
+            System.out.print("Moving to space: "+newPosition+"\r\n");
+            System.out.println(currentPlayer.getName() + " is now in square: " + board.getCurrentSpace(newPosition) + "\r\n"+"Balance: " + bank.getBalance(currentPlayer));
 
             // check if current player has won
             if (bank.getBalance(currentPlayer) <=0) {
@@ -76,11 +77,8 @@ public final class Application {
             currentPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
 
             // ask user if they want to continue playing
-            System.out.print("Continue playing? (Y/N): ");
+            System.out.print("<Enter> for next player move"+"\r\n");
             String input = scanner.nextLine();
-            if (input.equalsIgnoreCase("N")) {
-                break;  // exit loop if user enters "N"
-            }
         }
     }
 }

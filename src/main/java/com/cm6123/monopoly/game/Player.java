@@ -1,5 +1,4 @@
 package com.cm6123.monopoly.game;
-
 public class Player {
     /**
      * Creating a String variable to store the player value.

@@ -2,29 +2,10 @@ package com.cm6123.monopoly.game;
 
 import com.cm6123.monopoly.game.Bank;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.ValueSource;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class BankChecks {
-
-    @Test
-    public void testDeposit() {
-        Bank bank = new Bank();
-        Player player = new Player("John");
-        bank.deposit(player, 500);
-        assertEquals(1500, bank.getBalance(player));
-    }
-
-    @Test
-    public void testWithdraw() {
-        Bank bank = new Bank();
-        Player player = new Player("Jane");
-        bank.withdraw(player, 200);
-        assertEquals(800, bank.getBalance(player));
-    }
-
     @Test
     public void testGetBalance() {
         Bank bank = new Bank();
@@ -34,5 +15,30 @@ public class BankChecks {
         assertEquals(1300, bank.getBalance(player));
         bank.withdraw(player, 100);
         assertEquals(1200, bank.getBalance(player));
+        assertFalse(bank.getBalance(player) == 0);
+        assertFalse(bank.getBalance(player) == 1000);
+    }
+
+    @Test
+    public void testDepositMethod() {
+        Bank bank = new Bank();
+        Player player = new Player("John");
+        bank.deposit(player, 553);
+        assertEquals(1553, bank.getBalance(player));
+        assertFalse(bank.getBalance(player) == 0);
+        assertFalse(bank.getBalance(player) == 1000);
+    }
+
+    @Test
+    public void testWithdrawMethod() {
+        Bank bank = new Bank();
+        Player player = new Player("Anna");
+        bank.withdraw(player, 200);
+        assertEquals(800, bank.getBalance(player));
+        bank.withdraw(player, 300);
+        assertEquals(500, bank.getBalance(player));
+        bank.withdraw(player, 200);
+        assertFalse(bank.getBalance(player) == 0);
+        assertFalse(bank.getBalance(player) == 1000);
     }
 }

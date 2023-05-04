@@ -16,15 +16,14 @@ public class BoardTest {
         Board board = new Board();
 
         //when
-        // Test if the board is created and has 16 spaces
+        // Test if the board is created and has 10 spaces
         assertEquals(10, board.spaces.size());
 
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 0; i <= 9; i++) { //
             String spaceName = board.getCurrentSpace(i);
             //then
             assertNotNull(spaceName);
-            assertFalse(spaceName.isEmpty());
-            // Verify that each space in the board are differentiated
+            assertFalse(spaceName.isEmpty()); //checking that the board is not empty
         }
     }
         @Test
@@ -33,7 +32,7 @@ public class BoardTest {
             Board board = new Board();
 
             //when --- //then
-            // Test that the getCurrentSpace() method returns the specific name (property, tax, station or road) related to the ID
+            // Test that the getCurrentSpace() method returns the specific name (property, tax, station or road) related to the ID (space number)
             assertEquals("Home", board.getCurrentSpace(0));
             assertEquals("Road", board.getCurrentSpace(1));
             assertEquals("Copacabana", board.getCurrentSpace(2));
@@ -59,7 +58,7 @@ public class BoardTest {
                 }
             }
             //then
-            assertTrue(invalidKeys.isEmpty(), "Invalid spaces in board found: " + invalidKeys);
+            assertTrue(invalidKeys.isEmpty(), "Invalid spaces (board does not contain this space): " + invalidKeys);
         }
 
 
