@@ -122,7 +122,7 @@ public class Action {
                     if (properties.getPropertyOwner("Barra da Tijuca") != null && properties.getPropertyOwner("Barra da Tijuca") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Barra da Tijuca");
                         bank.withdraw(player, rent);
-                        //bank.deposit((properties.getPropertyOwner("Copacabana"),rent);
+                        //bank.deposit((properties.getPropertyOwner("Copacabana")),rent);
                         System.out.println("Paid rent.");
                     } else {
                         int price = properties.getPropertyPrice("Barra da Tijuca");
@@ -175,6 +175,12 @@ public class Action {
                 bank.withdraw(player, spacesToMove*10);
                 break;
         }
+    }
+    public int movePlayer(final Player player, int firstRoll, int secondRoll, int spacesToMove) {
+        this.firstRoll = firstRoll;
+        this.secondRoll = secondRoll;
+        this.spacesToMove = spacesToMove;
+        return spacesToMove;
     }
 }
 

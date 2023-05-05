@@ -3,11 +3,16 @@ package com.cm6123.monopoly;
 import com.cm6123.monopoly.dice.Dice;
 import com.cm6123.monopoly.game.*;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.when;
 import org.mockito.Mockito.*;
 
 public class ActionChecks {
@@ -61,7 +66,7 @@ public class ActionChecks {
         //When the method move(player) is called
         Action action = new Action(bank, board);
         //Then the player should move more the 0 spaces as minimum spaces to move is 2 (1+1)
-        Assertions.assertTrue(action.move(player)!=0);
+        Assertions.assertTrue(action.move(player)>0);
         //And---Then the player should not move more the 13 spaces as max spaces to move is 12 (6+6)
         Assertions.assertFalse(action.move(player)>13);
         }
@@ -89,9 +94,33 @@ public class ActionChecks {
 
         action.moveToSpace(player, 7);
         int newBalance = bank.getBalance(player);
-        Assertions.assertTrue(newBalance<=990 || newBalance<=950);
+        Assertions.assertTrue(newBalance<=990);
+    }
+
+    @Test
+    public void testTaxOfficeFirstRollEqualToSecondRoll() {
+        Bank bank = new Bank();
+        Board board = new Board();
+        Action action = new Action(bank, board);
+        Player player = new Player("Player A");
+        action.moveToSpace(player, 7);
+        assertEquals(950, bank.getBalance(player));
+    }
+    @Test
+    public void testTaxOfficeFirstRollDiffToSecondRoll() {
+        Bank bank = new Bank();
+        Board board = new Board();
+        Action action = new Action(bank, board);
+        Player player = new Player("Player B");
+        int firstRoll = 3;
+        int secondRoll = 4;
+        int spacesToMove = firstRoll + secondRoll;
+        int newPosition = action.movePlayer(player, firstRoll, secondRoll, spacesToMove);
+        action.moveToSpace(player, newPosition);
+        assertEquals(900, bank.getBalance(player));
     }
 }
+
 
 
 

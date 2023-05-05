@@ -69,8 +69,11 @@ public final class Application {
                 System.out.println(currentPlayer.getName() + " is the winner of Rio de Janeiro Monopoly");
             break;
             }
+
             if (bank.getBalance(currentPlayer) <= 0) {
+                Bankruptcy bankruptcy = new Bankruptcy();
                 System.out.println(currentPlayer.getName() + " has no money left");
+                System.out.println(currentPlayer.getName()+ "has accumulated assets of: "+bankruptcy.accumulatedWealth(currentPlayer));
                 System.out.println(currentPlayer.getName() + " Leaving game");
 
                 // Create a new array with one less element

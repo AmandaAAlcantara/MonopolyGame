@@ -45,4 +45,8 @@ public class Player {
     public String getName() {
         return player;
     }
+    public String getOwner(String player) {
+        return player;
+    }
+
 }
