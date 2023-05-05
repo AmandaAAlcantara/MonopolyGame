@@ -1,7 +1,6 @@
 package com.cm6123.monopoly.game;
 import java.util.Map;
 import java.util.HashMap;
-
     public class Bank {
         /**
          * Creating a Map to atore balances.

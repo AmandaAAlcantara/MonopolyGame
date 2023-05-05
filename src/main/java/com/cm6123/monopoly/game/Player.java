@@ -17,7 +17,6 @@ public class Player {
         this.player = player;
         this.position = 0; // Initial position
     }
-
     /**
      * Returning the value of the player if the method getPlayer is called.
      * @return player.getPlayer()

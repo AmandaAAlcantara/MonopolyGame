@@ -4,6 +4,8 @@ import com.cm6123.monopoly.game.Bank;
 import com.cm6123.monopoly.game.Action;
 import com.cm6123.monopoly.game.Properties;
 import com.cm6123.monopoly.game.Player;
+import com.cm6123.monopoly.game.Bankruptcy;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,11 +30,8 @@ public final class Application {
      * @param args command line args.
      */
     public static void main(final String[] args) {
-
         logger.info("Application Started with args:{}", String.join(",", args));
-
-        System.out.println("Hello. Welcome to Monopoly.");
-
+        System.out.println("Hello. Welcome to Rio de Janeiro Monopoly.");
         logger.info("Application closing");
 
         Bank bank = new Bank();
@@ -40,7 +39,7 @@ public final class Application {
         Properties properties = new Properties();
         Action action = new Action(bank, board);
 
-// get number of players from user input
+
         Scanner scanner = new Scanner(System.in);
         int numPlayers = 0;
         while (numPlayers < 2 || numPlayers > 10) {
@@ -49,7 +48,7 @@ public final class Application {
             scanner.nextLine();
         }
 
-// create players
+
         Player[] players = new Player[numPlayers];
         for (int i = 0; i < numPlayers; i++) {
             System.out.print("Enter name of Player " + (i + 1) + ": ");
@@ -60,23 +59,45 @@ public final class Application {
         int currentPlayerIndex = 0;  // index of the player whose turn it is
 
         while (true) {
-            // get current player and move to new space
+
             Player currentPlayer = players[currentPlayerIndex];
             int newPosition = action.move(currentPlayer);
             action.moveToSpace(currentPlayer, newPosition);
-            System.out.print("Moving to space: "+newPosition+"\r\n");
             System.out.println(currentPlayer.getName() + " is now in square: " + board.getCurrentSpace(newPosition) + "\r\n"+"Balance: " + bank.getBalance(currentPlayer));
 
-            // check if current player has won
-            if (bank.getBalance(currentPlayer) <=0) {
-                System.out.println(currentPlayer.getName() + " has lost");
-                break;  // exit loop if current player has won
+            if (numPlayers < 2){
+                System.out.println(currentPlayer.getName() + " is the winner of Rio de Janeiro Monopoly");
+            break;
+            }
+            if (bank.getBalance(currentPlayer) <= 0) {
+                System.out.println(currentPlayer.getName() + " has no money left");
+                System.out.println(currentPlayer.getName() + " Leaving game");
+
+                // Create a new array with one less element
+                Player[] newPlayers = new Player[numPlayers - 1];
+
+                // Copy all the elements from the old array except for the current player
+                int j = 0;
+                for (int i = 0; i < numPlayers; i++) {
+                    if (i != currentPlayerIndex) {
+                        newPlayers[j] = players[i];
+                        j++;
+                    }
+                }
+
+                // Update the players array and numPlayers
+                players = newPlayers;
+                numPlayers--;
+
+                // Reset the currentPlayerIndex if it's out of bounds
+                if (currentPlayerIndex >= numPlayers) {
+                    currentPlayerIndex = 0;
+                }
             }
 
-            // move to next player's turn
             currentPlayerIndex = (currentPlayerIndex + 1) % numPlayers;
 
-            // ask user if they want to continue playing
+
             System.out.print("<Enter> for next player move"+"\r\n");
             String input = scanner.nextLine();
         }
