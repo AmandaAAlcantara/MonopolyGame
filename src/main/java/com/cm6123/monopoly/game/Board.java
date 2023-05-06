@@ -7,22 +7,22 @@ public class Board {
      */
     public HashMap<Integer, String> spaces;
     /**
-     * Defining the name of the spaces (number and name).
+     * The Bord() constructor initializes the spaces instance variable as a new empty HashMap and then initializes the game board with theBoard().
      */
     public Board(){
         spaces = new HashMap<>();
         theBoard();
     }
     /**
-     * Defining the name of the spaces (number and name).
-     * @param numberID **this is**
+     * Creating method to add the spaces HashMap object in the Board class with the number and name of the space.
      * @param space **this is**
+     * @param numberID **this is**
      */
     protected void boardSpaces(final int numberID, final String space) {
         spaces.put(numberID, space);
     }
     /**
-     * Method so that based on the position of the player, the code shows which space name t is located.
+     * Method so that, based on the position of the player, the code shows which space name is located.
      * @param numberID ** this is **
      * @return spaces.get(numberID)
      */
@@ -30,7 +30,7 @@ public class Board {
         return spaces.get(numberID);
     }
     /**
-     * Adding the specific names and space numbers to the board.
+     * Adding the specific names and space numbers to the board (HashMap).
      */
     public void theBoard(){
         boardSpaces(0,"Home");

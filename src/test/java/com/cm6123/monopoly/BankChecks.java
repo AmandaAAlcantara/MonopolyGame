@@ -13,7 +13,7 @@ public class BankChecks {
         assertEquals(1000, bank.getBalance(player));
         bank.deposit(player, 300);
         assertEquals(1300, bank.getBalance(player));
-        bank.withdraw(player, 100);
+        bank.withdrawl(player, 100);
         assertEquals(1200, bank.getBalance(player));
         assertFalse(bank.getBalance(player) == 0);
         assertFalse(bank.getBalance(player) == 1000);
@@ -33,11 +33,11 @@ public class BankChecks {
     public void testWithdrawMethod() {
         Bank bank = new Bank();
         Player player = new Player("Anna");
-        bank.withdraw(player, 200);
+        bank.withdrawl(player, 200);
         assertEquals(800, bank.getBalance(player));
-        bank.withdraw(player, 300);
+        bank.withdrawl(player, 300);
         assertEquals(500, bank.getBalance(player));
-        bank.withdraw(player, 200);
+        bank.withdrawl(player, 200);
         assertFalse(bank.getBalance(player) == 0);
         assertFalse(bank.getBalance(player) == 1000);
     }

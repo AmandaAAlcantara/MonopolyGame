@@ -3,23 +3,27 @@ import java.util.HashMap;
 
 public class Properties {
     /**
-     * Defining the name of the spaces (number and name).
+     * Declaring a private instance variable called player of type Player.
      */
     private Player player;
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a variable propertyPrice as a HashMap to stores the price of different properties, where
+     * the keys are the names of the properties and the values are the prices.
      */
     private HashMap<String, Integer> propertyPrice;
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a variable propertyOwner as a HashMap to stores the owner of different properties, where
+     * the keys are the names of the properties and the values are the names of the owners.
      */
     private HashMap<String, String> propertyOwner;
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a variable propertyRent as a HashMap to stores the rent of different properties, where
+     * the keys are the names of the properties and the values are the rents.
      */
     private HashMap<String, Integer> propertyRent;
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a constructor to initialize the instance variables propertyPrice, propertyOwner, and propertyRent
+     * as new HashMaps and initializing their values using the setPropertyPrice, setPropertyOwner, and setPropertyRent.
      */
     public Properties() {
         propertyPrice = new HashMap<String, Integer>();
@@ -30,7 +34,7 @@ public class Properties {
         setPropertyRent();
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to populate the propertyPrice HashMap object with the different prices of the properties.
      * @param property **this is**
      * @param value **this is**
      */
@@ -38,7 +42,7 @@ public class Properties {
         propertyPrice.put(property, value);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to populate the propertyOwner HashMap object with the different owners of the properties.
      * @param property **this is**
      * @param owner **this is**
      */
@@ -46,7 +50,7 @@ public class Properties {
         propertyOwner.put(property, owner);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to populate the propertyRent HashMap object with the different rents of the properties.
      * @param property **this is**
      * @param rent **this is**
      */
@@ -54,7 +58,7 @@ public class Properties {
         propertyRent.put(property, rent);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to retrieve the price of a specific property in the monopoly game by providing the name of the property.
      * @param property **this is**
      * @return propertyPrice.get(property)
      */
@@ -62,7 +66,7 @@ public class Properties {
         return propertyPrice.get(property);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to retrieve the owner of a specific property in the monopoly game by providing the name of the property.
      * @param property **this is**
      * @return propertyOwner.get(property)
      */
@@ -70,7 +74,7 @@ public class Properties {
         return propertyOwner.get(property);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Creating a method to retrieve the rent of a specific property in the monopoly game by providing the name of the property.
      * @return propertyRent.get(property)
      * @param property **this is**
      */
@@ -78,7 +82,7 @@ public class Properties {
         return propertyRent.get(property);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Populating the propertyPrice HashMap with the prices of each property.
      */
     public void setPropertyPrice(){
         addPropertyPrice("Copacabana",400);
@@ -87,7 +91,7 @@ public class Properties {
         addPropertyPrice("Ipanema",200);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Populating the propertyOwner HashMap with null so that later on the owner can be assigned later.
      */
     public void setPropertyOwner(){
         addPropertyOwner("Copacabana",null);
@@ -96,7 +100,7 @@ public class Properties {
         addPropertyOwner("Barra da Tijuca", null);
     }
     /**
-     * Defining the name of the spaces (number and name).
+     * Populating the propertyRent HashMap with the specific rent of each property.
      */
     public void setPropertyRent(){
         addPropertyRent("Copacabana", 40);
