@@ -10,6 +10,12 @@ class PropertyCheck{
     @ParameterizedTest
     @CsvSource({ "Copacabana, 400, null, 40", "Leblon, 250, null, 25", "Barra da Tijuca, 150, null, 20","Ipanema, 200, null, 15"})
     void testGetValuesForProperty(String property, int price, String owner, int rent) {
+
+        //Given properties Copacabana/Leblon/Barra da Tijuca/Ipanema
+        //When the methods getPropoertyPrice, getPropertyOwner and getPropertyRent are called
+        //Then the property price is equal to the values defined beforehand
+        //And the Owner is null
+        //And the Rent is equal to the values defined beforehand
         Properties properties = new Properties();
         assertEquals(price, properties.getPropertyPrice(property));
         assertNull(properties.getPropertyOwner(property));
@@ -19,6 +25,12 @@ class PropertyCheck{
     @ParameterizedTest
     @CsvSource({"Leblon, 250, null, 25", "Ipanema, 200, null, 15"})
     void testGetValuesWhenPropertyOwned(String property, int price, String owner, int rent) {
+
+        //Given properties Leblon/Ipanema
+        //When the methods getPropoertyPrice, getPropertyOwner and getPropertyRent are called
+        //Then the property price is equal to the values defined beforehand
+        //And the Owner is null
+        //And the Rent is equal to the values defined beforehand
         Properties properties = new Properties();
         assertEquals(price, properties.getPropertyPrice(property));
         assertTrue(properties.getPropertyOwner("Leblon")==null);

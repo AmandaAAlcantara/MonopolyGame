@@ -20,6 +20,11 @@ public class BankruptcyCheks {
 
     @Test
     public void testAccumulatedProperties() {
+        //Given a player named James
+        //When James is defined as owner
+        //of the Copacabana, Leblon, Barra da Tijuca and Ipanema properties
+        //Then the added value of the accumulated properties should equal to 1000. (400+250+200+150)
+
         Bank bank = new Bank();
         Player player = new Player("James");
         Properties properties = new Properties();
@@ -34,6 +39,11 @@ public class BankruptcyCheks {
 
     @Test
     public void testAccumulatedWealth() {
+        //Given a player named Carol with balance of 1000
+        //When Carol is defined as the owner of the Ipanema and Copacabana properties
+        //Then the accumulated weath of Carol is the balance + the value of the owned properties
+        // (1000+400+200)
+
         Bank bank = new Bank();
         Player testPlayer = new Player("Carol");
         Properties properties = new Properties();
@@ -46,6 +56,11 @@ public class BankruptcyCheks {
 
     @Test
     public void testsellAccumulatedWealth() {
+        //Given a player named Carol with balance of 1000
+        //And owner of all the properties in Rio de Janeiro Monopoly
+        //When Carol sells the properties she owns
+        //Then she will get 50% of the value she bought the property for
+
         Bank bank = new Bank();
         Player testPlayer = new Player("Carol");
         Properties properties = new Properties();
