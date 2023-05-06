@@ -63,7 +63,7 @@ public final class Application {
             Player currentPlayer = players[currentPlayerIndex];
             int newPosition = action.move(currentPlayer);
             action.moveToSpace(currentPlayer, newPosition);
-            System.out.println(currentPlayer.getName() + " is now in square: " + board.getCurrentSpace(newPosition) + "\r\n"+"Balance: " + bank.getBalance(currentPlayer));
+            System.out.println(currentPlayer.getName() + " is now in square: " + board.getCurrentSpace(newPosition) + "\r\n"+"Balance now: " + bank.getBalance(currentPlayer));
 
             if (numPlayers < 2){
                 System.out.println(currentPlayer.getName() + " is the winner of Rio de Janeiro Monopoly");
@@ -71,10 +71,10 @@ public final class Application {
             }
 
             if (bank.getBalance(currentPlayer) <= 0) {
-                Bankruptcy bankruptcy = new Bankruptcy();
+                Bankruptcy bankruptcy = new Bankruptcy(bank,currentPlayer,properties);
                 System.out.println(currentPlayer.getName() + " has no money left");
-                System.out.println(currentPlayer.getName()+ "has accumulated assets of: "+bankruptcy.accumulatedWealth(currentPlayer));
-                System.out.println(currentPlayer.getName() + " Leaving game");
+                System.out.println(currentPlayer.getName()+ " has accumulated assets of: "+bankruptcy.accumulatedProperties(currentPlayer));
+                System.out.println(currentPlayer.getName() + " is leaving the game");
 
                 // Create a new array with one less element
                 Player[] newPlayers = new Player[numPlayers - 1];

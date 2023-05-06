@@ -38,7 +38,7 @@ public class Properties {
         propertyPrice.put(property, value);
     }
 
-    protected void addPropertyOwner(final String property, final String owner) {
+    public void addPropertyOwner(final String property, final String owner) {
         propertyOwner.put(property, owner);
     }
 

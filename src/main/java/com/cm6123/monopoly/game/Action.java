@@ -69,7 +69,6 @@ public class Action {
         switch (spaceName) {
             case "Home":
                 bank.deposit(player, 200);
-                System.out.println("Collect 200.");
                 break;
             case "Road":
                 break;
@@ -122,7 +121,6 @@ public class Action {
                     if (properties.getPropertyOwner("Barra da Tijuca") != null && properties.getPropertyOwner("Barra da Tijuca") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Barra da Tijuca");
                         bank.withdraw(player, rent);
-                        //bank.deposit((properties.getPropertyOwner("Copacabana")),rent);
                         System.out.println("Paid rent.");
                     } else {
                         int price = properties.getPropertyPrice("Barra da Tijuca");
@@ -159,7 +157,6 @@ public class Action {
 
                 break;
             case "Tax Office":
-                System.out.println("Tax amount deducted from balance.");
                 if (firstRoll == secondRoll){
                 int balance = bank.getBalance(player);
                 int amount1 = (int) (balance*0.05);
@@ -171,7 +168,6 @@ public class Action {
                 }
                 break;
             case "Train Station":
-                System.out.println("Ticket price deducted from balance.");
                 bank.withdraw(player, spacesToMove*10);
                 break;
         }
