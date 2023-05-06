@@ -112,10 +112,10 @@ public class ActionChecks {
         Board board = new Board();
         Action action = new Action(bank, board);
         Player player = new Player("Player B");
-        int firstRoll = 3;
-        int secondRoll = 4;
-        int spacesToMove = firstRoll + secondRoll;
-        int newPosition = action.movePlayer(player, firstRoll, secondRoll, spacesToMove);
+        int theFirstRoll = 3;
+        int theSecondRoll = 4;
+        int numSpacesToMove = theFirstRoll + theSecondRoll;
+        int newPosition = action.movePlayer(player, theFirstRoll, theSecondRoll, numSpacesToMove);
         action.moveToSpace(player, newPosition);
         assertEquals(900, bank.getBalance(player));
     }

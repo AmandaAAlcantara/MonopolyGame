@@ -2,7 +2,6 @@ package com.cm6123.monopoly.game;
 import java.util.HashMap;
 
 public class Board {
-
     /**
      * Creating a HashMap to store the names and spaces for the monopoly game.
      */
@@ -14,6 +13,11 @@ public class Board {
         spaces = new HashMap<>();
         theBoard();
     }
+    /**
+     * Defining the name of the spaces (number and name).
+     * @param numberID **this is**
+     * @param space **this is**
+     */
     protected void boardSpaces(final int numberID, final String space) {
         spaces.put(numberID, space);
     }

@@ -11,10 +11,10 @@ public class Player {
 
     /**
      * defining the player as a parameter and the position as 0 (0 is the start of the board).
-     * @param player ** this is **
+     * @param aplayer ** this is **
      */
-    public Player(final String player){
-        this.player = player;
+    public Player(final String aplayer){
+        this.player = aplayer;
         this.position = 0; // Initial position
     }
     /**
@@ -45,7 +45,12 @@ public class Player {
     public String getName() {
         return player;
     }
-    public String getOwner(String player) {
+    /**
+     * Returning the position of the player if the method getPosition is called.
+     * @param aplayer **this is**
+     * @return player
+     */
+    public String getOwner(final String aplayer) {
         return player;
     }
 

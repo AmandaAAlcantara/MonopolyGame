@@ -37,11 +37,19 @@ public class Properties {
     protected void addPropertyPrice(final String property, final Integer value) {
         propertyPrice.put(property, value);
     }
-
+    /**
+     * Defining the name of the spaces (number and name).
+     * @param property **this is**
+     * @param owner **this is**
+     */
     public void addPropertyOwner(final String property, final String owner) {
         propertyOwner.put(property, owner);
     }
-
+    /**
+     * Defining the name of the spaces (number and name).
+     * @param property **this is**
+     * @param rent **this is**
+     */
     protected void addPropertyRent(final String property, final Integer rent) {
         propertyRent.put(property, rent);
     }
@@ -96,7 +104,6 @@ public class Properties {
         addPropertyRent("Ipanema", 15);
         addPropertyRent("Barra da Tijuca", 20);
     }
-
 }
 
 

@@ -36,12 +36,12 @@ public class Action {
     private final int boardSize = 10;
     /**
      * Creating constructor for the Action class as parameters and initializing the instance variables.
-     * @param bank  **this is**
-     * @param board **this is**
+     * @param thebank  **this is**
+     * @param theboard **this is**
      */
-    public Action(final Bank bank, final Board board) {
-        this.bank = bank;
-        this.board = board;
+    public Action(final Bank thebank, final Board theboard) {
+        this.bank = thebank;
+        this.board = theboard;
     }
     /**
      * Creating moveToSpace, so that when the player moves to different spaces the bank actions are executed.
@@ -172,11 +172,19 @@ public class Action {
                 break;
         }
     }
-    public int movePlayer(final Player player, int firstRoll, int secondRoll, int spacesToMove) {
-        this.firstRoll = firstRoll;
-        this.secondRoll = secondRoll;
-        this.spacesToMove = spacesToMove;
-        return spacesToMove;
+    /**
+     * Creating moveToSpace, so that when the player moves to different spaces the bank actions are executed.
+     * @param player **this is**
+     * @param thefirstRoll  **this is**
+     * @param thesecondRoll **this is**
+     * @param numspacesToMove **this is**
+     * @return numspacesToMove **this is**
+     */
+    public int movePlayer(final Player player,final int thefirstRoll, final int thesecondRoll, final int numspacesToMove) {
+        this.firstRoll = thefirstRoll;
+        this.secondRoll = thesecondRoll;
+        this.spacesToMove = numspacesToMove;
+        return numspacesToMove;
     }
 }
 
