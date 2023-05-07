@@ -1,6 +1,7 @@
 package com.cm6123.monopoly.game;
 import java.util.Map;
 import java.util.HashMap;
+// Used code from Week 9 Sessions of the "Fundamental of Computing with Java" module as reference for use of external libraries.
     public class Bank {
         /**
          * Creating a Map to store the balances of specific players.

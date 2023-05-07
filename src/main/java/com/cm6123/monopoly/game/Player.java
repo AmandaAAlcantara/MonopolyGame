@@ -14,6 +14,8 @@ public class Player {
      *
      * @param aplayer ** this is **
      */
+    //Used the code from stackoverflow as inspiration: https://stackoverflow.com/questions/20028272/syntax-and-logic-for-moving-player-around-game-board-array-using-do-while-loop-j
+    //Access: 3 Apr 2023
     public Player(final String aplayer) {
         this.player = aplayer;
         this.position = 0; // Initial position

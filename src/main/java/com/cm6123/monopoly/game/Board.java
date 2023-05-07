@@ -1,10 +1,11 @@
 package com.cm6123.monopoly.game;
 import java.util.HashMap;
-
+// Used code from Week 9 Sessions of the "Fundamental of Computing with Java" module as reference for use of external libraries.
 public class Board {
     /**
      * Creating a HashMap to store the names and spaces for the monopoly game.
      */
+    //Code for HashMap inspired by W3Schools. [Access: 30 Apr 2023]
     public HashMap<Integer, String> spaces;
     /**
      * The Bord() constructor initializes the spaces instance variable as a new empty HashMap and then initializes the game board with theBoard().

@@ -1,5 +1,5 @@
 package com.cm6123.monopoly.game;
-
+// Used code from Week 3 Sessions of the "Fundamental of Computing with Java" module as reference.
 public class Bankruptcy extends Bank {
     /**
      * Creating a private instance variable named bank of a class type Bank.

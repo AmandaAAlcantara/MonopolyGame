@@ -49,6 +49,7 @@ public class Action {
      * @param player **this is**
      * @return newPosition
      */
+    //Adaptive use of modulus operator from https://codereview.stackexchange.com/questions/58063/screen-wraparound. [Access: 1 Apr 2023]
     public int move(final Player player){
         Dice dice = new Dice(6);
         firstRoll = dice.roll();
@@ -79,6 +80,7 @@ public class Action {
                     if (properties.getPropertyOwner("Copacabana") != null && properties.getPropertyOwner("Copacabana") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Copacabana");
                         bank.withdrawl(player, rent);
+                        //This would deposit the rent amount in the Owner`s balance however, the deposit method does not accept a string. So this line of code does not work.
                         //bank.deposit((properties.getPropertyOwner("Copacabana"),rent);
                         System.out.println("Paid rent.");
                     } else {
@@ -100,6 +102,7 @@ public class Action {
                     if (properties.getPropertyOwner("Leblon") != null && properties.getPropertyOwner("Leblon") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Leblon");
                         bank.withdrawl(player, rent);
+                        //This would deposit the rent amount in the Owner`s balance however, the deposit method does not accept a string. So this line of code does not work.
                         //bank.deposit((properties.getPropertyOwner("Copacabana"),rent);
                         System.out.println("Paid rent.");
                     } else {
@@ -121,6 +124,8 @@ public class Action {
                     if (properties.getPropertyOwner("Barra da Tijuca") != null && properties.getPropertyOwner("Barra da Tijuca") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Barra da Tijuca");
                         bank.withdrawl(player, rent);
+                        //This would deposit the rent amount in the Owner`s balance however, the deposit method does not accept a string. So this line of code does not work.
+                        //bank.deposit((properties.getPropertyOwner("Barra da Tijuca"),rent);
                         System.out.println("Paid rent.");
                     } else {
                         int price = properties.getPropertyPrice("Barra da Tijuca");
@@ -141,7 +146,8 @@ public class Action {
                     if (properties.getPropertyOwner("Ipanema") != null && properties.getPropertyOwner("Ipanema") != player.getPlayer()) {
                         int rent = properties.getPropertyRent("Ipanema");
                         bank.withdrawl(player, rent);
-                        //bank.deposit((properties.getPropertyOwner("Copacabana"),rent);
+                        //This would deposit the rent amount in the Owner`s balance however, the deposit method does not accept a string. So this line of code does not work.
+                        //bank.deposit((properties.getPropertyOwner("Ipanema"),rent);
                         System.out.println("Paid rent.");
                     } else {
                         int price = properties.getPropertyPrice("Ipanema");
@@ -159,10 +165,12 @@ public class Action {
             case "Tax Office":
                 if (firstRoll == secondRoll){
                 int balance = bank.getBalance(player);
+                //Takes 5% off player's balance if the first roll = second roll
                 int amount1 = (int) (balance*0.05);
                 bank.withdrawl(player, amount1);
                 } else {
                 int balance = bank.getBalance(player);
+                //Takes 10% off player's balance if the first roll = second roll
                 int amount2 = (int) (balance*0.1);
                 bank.withdrawl(player, amount2);
                 }
@@ -180,6 +188,7 @@ public class Action {
      * @param numspacesToMove **this is**
      * @return numspacesToMove **this is**
      */
+    //This method is used in the ActionChecks
     public int movePlayer(final Player player,final int thefirstRoll, final int thesecondRoll, final int numspacesToMove) {
         this.firstRoll = thefirstRoll;
         this.secondRoll = thesecondRoll;
@@ -187,5 +196,4 @@ public class Action {
         return numspacesToMove;
     }
 }
-
 

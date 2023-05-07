@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
-
+// Used code from Week 9 Sessions of the "Fundamental of Computing with Java" module as reference for user input/output.
 public final class Application {
     /**
      * Create a logger for the class.

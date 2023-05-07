@@ -1,6 +1,6 @@
 package com.cm6123.monopoly.game;
 import java.util.HashMap;
-
+// Used code from Week 9 Sessions of the "Fundamental of Computing with Java" module as reference for use of external libraries.
 public class Properties {
     /**
      * Declaring a private instance variable called player of type Player.
@@ -46,6 +46,7 @@ public class Properties {
      * @param property **this is**
      * @param owner **this is**
      */
+    //Code for update owner, price and rent inspired by https://stackoverflow.com/questions/4157972/how-to-update-a-value-given-a-key-in-a-hashmap. [Access: 5 Apr 2023]
     public void addPropertyOwner(final String property, final String owner) {
         propertyOwner.put(property, owner);
     }
