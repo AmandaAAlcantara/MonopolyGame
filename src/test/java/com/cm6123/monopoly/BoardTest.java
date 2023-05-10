@@ -14,15 +14,14 @@ public class BoardTest {
     void testBoardCreation() {
         Board board = new Board();
 
-        //given the board constructed has 0 to 9 spaces
+        //given the board constructed has 0 to 9 spaces and has names for each space
         //when looping trought the board
-        //then the spaces 0 to 9 all have names
+        //then the spaces 0 to 9 should not be empty
 
         assertEquals(10, board.spaces.size());
 
         for (int i = 0; i <= 9; i++) { //
             String spaceName = board.getCurrentSpace(i);
-            //then
             assertNotNull(spaceName);
             assertFalse(spaceName.isEmpty()); //checking that the board is not empty
         }
