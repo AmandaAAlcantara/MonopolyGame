@@ -65,6 +65,8 @@ public class Action {
      * @param player  **this is**
      * @param spaceId **this is**
      */
+    //Inspired switch use addapted from W3 Schools. Available at: https://www.w3schools.com/java/java_switch.asp
+    //Accessed 3 May 2023
     public void moveToSpace(final Player player, final int spaceId) {
         String spaceName = board.getCurrentSpace(spaceId);
         switch (spaceName) {
@@ -189,6 +191,7 @@ public class Action {
      * @return numspacesToMove **this is**
      */
     //This method is used in the ActionChecks
+    //Created to test the conditional statements of moveToSpace()
     public int movePlayer(final Player player,final int thefirstRoll, final int thesecondRoll, final int numspacesToMove) {
         this.firstRoll = thefirstRoll;
         this.secondRoll = thesecondRoll;

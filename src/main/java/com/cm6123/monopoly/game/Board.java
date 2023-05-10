@@ -7,6 +7,7 @@ public class Board {
      */
     //Code for HashMap inspired by W3Schools. [Access: 30 Apr 2023]
     public HashMap<Integer, String> spaces;
+    // spaces is not private because it is accessed by other classes
     /**
      * The Bord() constructor initializes the spaces instance variable as a new empty HashMap and then initializes the game board with theBoard().
      */

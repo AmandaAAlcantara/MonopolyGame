@@ -54,6 +54,7 @@ public class BoardTest {
             //when looping trought the board
             //then only spaces from 0 to 9 are parts of the board
 
+            //used ChatGPT 2 to understand how to implement keySet and HashSet in testing
             Board board = new Board();
             Set<Integer> keys = board.spaces.keySet();
             Set<Integer> invalidKeys = new HashSet<>();
@@ -65,6 +66,5 @@ public class BoardTest {
             }
             assertTrue(invalidKeys.isEmpty(), "Invalid spaces (board does not contain this space): " + invalidKeys);
         }
-
-
     }
+

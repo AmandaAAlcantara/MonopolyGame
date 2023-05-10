@@ -94,6 +94,7 @@ public class Properties {
     /**
      * Populating the propertyOwner HashMap with null so that later on the owner can be assigned later.
      */
+    //Logic used to list and update the owner addapted from chatGPT 2
     public void setPropertyOwner(){
         addPropertyOwner("Copacabana",null);
         addPropertyOwner("Leblon",null);
